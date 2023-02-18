@@ -1,0 +1,108 @@
+{
+    "Recommendation": {
+        "_": {
+            "items": 100,
+            "data": [
+                {
+                    "id": 1000,
+                    "title": "Scuba diving in the Cebu",
+                    "url": "https://google.com",
+                    "thumbnailUrl": "https://picsum.photos/seed/1000/1920/270",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+                    "categoryId": 8,
+                    "referralId": "A2343531",
+                    "createdAt": "2019-01-01T00:00:00Z",
+                    "cityId": "cebu"
+                }
+            ]
+        },
+        "id": {
+            "int": {
+                "min": 1000,
+                "max": 9999
+            }
+        },
+        "title": {
+            "loremWords": {
+                "minLength": 5,
+                "maxLength": 20
+            }
+        },
+        "url": {
+            "regexp": "https://[a-z]{5,10}\\.[a-z]{2,3}"
+        },
+        "thumbnailUrl": {
+            "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/270"
+        },
+        "description": {
+            "loremParagraphs": {
+                "minLength": 10,
+                "maxLength": 100
+            }
+        },
+        "categoryId": {
+            "int": {
+                "min": 0,
+                "max": 20
+            }
+        },
+        "referralId": {
+            "regexp": "[a-z]{5,10}"
+        },
+        "createdAt": {
+            "dateTime": {
+                "min": "2010-01-01T00:00:00Z",
+                "max": "2020-12-31T23:59:59Z"
+            }
+        },
+        "cityId": {
+            "belongsTo": "City"
+        }
+    },
+    "Airport": {
+        "airportId": {
+            "regexp": "[A-Z][A-Z][A-Z]"
+        },
+        "airportName": {
+            "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}"
+        },
+        "airportRank": {
+            "int": {
+                "min": 0,
+                "max": 20
+            }
+        },
+        "recommendations": {
+            "hasMany": "Recommendation"
+        }
+    },
+    "City": {
+        "_": {
+            "items": 100
+        },
+        "cityId": {
+            "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}"
+        },
+        "cityName": {
+            "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}"
+        },
+        "description": {
+            "loremParagraphs": {
+                "minLength": 10,
+                "maxLength": 100
+            }
+        },
+        "createdAt": {
+            "dateTime": {
+                "min": "2010-01-01T00:00:00Z",
+                "max": "2020-12-31T23:59:59Z"
+            }
+        },
+        "airports": {
+            "hasMany": "Airport"
+        },
+        "recommendations": {
+            "hasMany": "Recommendation"
+        }
+    }
+}
