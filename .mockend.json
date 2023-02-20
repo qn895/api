@@ -51,7 +51,10 @@
             "regexp": "[A-Z][A-Z][A-Z]"
         },
         "airportName": {
-            "regexp": "[A-Z]{5,10} [A-Z]{5,10} [A-Z]{5,10} [A-Z]{5,10} [A-Z]{5,10}"
+            "loremWords": {
+                "minLength": 5,
+                "maxLength": 20
+            }
         },
         "airportRank": {
             "int": {
