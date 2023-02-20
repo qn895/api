@@ -50,7 +50,9 @@
         "airportId": {
             "regexp": "[A-Z][A-Z][A-Z]"
         },
-        "airportName": "[A-Z]{5,10} [A-Z]{5,10} [A-Z]{5,10} [A-Z]{5,10} [A-Z]{5,10}",
+        "airportName": {
+            "regexp": "[A-Z]{5,10} [A-Z]{5,10} [A-Z]{5,10} [A-Z]{5,10} [A-Z]{5,10}"
+        },
         "airportRank": {
             "int": {
                 "min": 0,
