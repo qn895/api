@@ -30,7 +30,7 @@
         "categoryId": {
             "int": {
                 "min": 0,
-                "max": 20
+                "max": 9
             }
         },
         "referralId": {
@@ -42,7 +42,7 @@
                 "max": "2020-12-31T23:59:59Z"
             }
         },
-        "cityId": {
+        "city": {
             "belongsTo": "City"
         }
     },
@@ -50,9 +50,7 @@
         "airportId": {
             "regexp": "[A-Z][A-Z][A-Z]"
         },
-        "airportName": {
-            "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}"
-        },
+        "airportName": "[A-Z]{5,10} [A-Z]{5,10} [A-Z]{5,10} [A-Z]{5,10} [A-Z]{5,10}",
         "airportRank": {
             "int": {
                 "min": 0,
@@ -61,6 +59,9 @@
         },
         "recommendations": {
             "hasMany": "Recommendation"
+        },
+        "city": {
+            "belongsTo": "City"
         }
     },
     "City": {
@@ -68,10 +69,10 @@
             "items": 100
         },
         "cityId": {
-            "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}"
+            "regexp": "[A-Z]{3,6}"
         },
         "cityName": {
-            "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}"
+            "regexp": "[A-Z]{5,12}"
         },
         "description": {
             "loremParagraphs": {
