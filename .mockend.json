@@ -1,7 +1,7 @@
 {
     "Recommendation": {
         "_": {
-            "items": 100
+            "items": 10000
         },
         "id": {
             "int": {
@@ -47,6 +47,9 @@
         }
     },
     "Airport": {
+        "_": {
+            "items": 150
+        },
         "airportId": {
             "regexp": "[A-Z][A-Z][A-Z]"
         },
